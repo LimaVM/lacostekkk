@@ -1,0 +1,126 @@
+/* Fonte do Google */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+  text-align: center;
+}
+
+/* Tema Claro (padrão) */
+:root {
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --link-background: #007bff;
+  --link-hover: #0056b3;
+  --box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Tema Escuro (detectado pelo sistema) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1a1a1a;
+    --text-color: #fff;
+    --link-background: #3d85c6;
+    --link-hover: #2a6496;
+    --box-shadow: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Container */
+.container {
+  background-color: var(--background-color);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px var(--box-shadow);
+  max-width: 400px;
+  width: 100%;
+  animation: fadeIn 1s ease-in-out;
+  transition: all 0.3s ease;
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Frase de boas-vindas */
+.welcome-message {
+  font-size: 6vw;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Estilo da imagem de perfil */
+.profile-pic {
+  width: 40vw;
+  max-width: 150px;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid var(--link-background);
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px var(--box-shadow);
+}
+
+/* Links */
+.links a {
+  display: block;
+  margin: 15px 0;
+  padding: 15px;
+  background-color: var(--link-background);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 12px var(--box-shadow);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 4.5vw;
+  max-width: 100%;
+}
+
+.links a:hover {
+  background-color: var(--link-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--box-shadow);
+}
+
+/* Ajustes de responsividade */
+@media (min-width: 768px) {
+  .welcome-message {
+    font-size: 24px;
+  }
+
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+
+  .links a {
+    font-size: 18px;
+  }
+}
